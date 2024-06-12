@@ -8,7 +8,6 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <div>
       <NavBar />
-
       <Component {...pageProps} />
       <Footer />
     </div>

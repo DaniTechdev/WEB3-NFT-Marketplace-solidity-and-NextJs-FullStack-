@@ -47,3 +47,9 @@
 
 
 
+
+@media screen and (max-width:35em){
+    .profile{
+        width: -13rem;
+    }
+}

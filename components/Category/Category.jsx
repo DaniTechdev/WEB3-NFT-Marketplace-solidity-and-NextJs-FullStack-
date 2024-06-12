@@ -7,7 +7,14 @@ import images from "../../img";
 
 const Category = () => {
   //We used array here because data from our api will come as an array and will be displaced here dynamically
-  const CategoryArray = [1, 2, 3, 4, 5, 6];
+  const CategoryArray = [
+    images.creatorbackground1,
+    images.creatorbackground10,
+    images.creatorbackground4,
+    images.creatorbackground6,
+    images.creatorbackground11,
+    images.creatorbackground8,
+  ];
 
   return (
     <div className={Style.box_category}>
@@ -15,7 +22,7 @@ const Category = () => {
         {CategoryArray.map((el, i) => (
           <div className={Style.category_box} key={i + 1}>
             <Image
-              src={images.creatorbackground1}
+              src={el}
               className={Style.category_box_image}
               alt="background image"
               width={350}

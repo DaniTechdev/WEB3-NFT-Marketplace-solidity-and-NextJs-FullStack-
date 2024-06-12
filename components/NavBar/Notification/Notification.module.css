@@ -60,7 +60,7 @@ margin-bottom: 2rem;
 
 @media screen and (max-width:35em){
     .notification{
-        width: 20rem;
+        width: 21rem;
         left:-15rem ;
     }
     .notification_box p{
