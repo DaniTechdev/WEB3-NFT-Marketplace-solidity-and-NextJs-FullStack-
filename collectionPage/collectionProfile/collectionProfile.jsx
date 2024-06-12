@@ -11,7 +11,7 @@ import {
 import Style from "./collectionProfile.module.css";
 import images from "../../img";
 
-const collectionProfile = () => {
+const collectionProfile = ({ NFTData }) => {
   const cardArray = [1, 2, 3, 4];
 
   return (

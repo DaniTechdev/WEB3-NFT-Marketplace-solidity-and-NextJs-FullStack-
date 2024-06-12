@@ -60,6 +60,7 @@
 
 .filter_box_items{
     width: 80%;
+    padding: 2rem;
     display: flex;
     margin: 0 auto;
     /* padding: 2rem; */
