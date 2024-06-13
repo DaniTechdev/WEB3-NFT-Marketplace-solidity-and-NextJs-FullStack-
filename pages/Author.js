@@ -5,6 +5,7 @@ import Style from "../styles/Author.module.css";
 import { Banner, NFTCardTwo } from "../collectionPage/collectionIndex";
 import { Brand, Title } from "../components/componentsindex";
 import images from "../img";
+import FollowerTabCard from "../components/FollowerTab/FollowerTabCard/FollowerTabCard";
 
 import {
   AuthorProfileCard,
@@ -26,7 +27,7 @@ const Author = () => {
 
   const [collectibles, setCollectibles] = useState(true);
   const [created, setCreated] = useState(false);
-  const [liked, setLiked] = useState(false);
+  const [like, setLike] = useState(false);
   const [follower, setFollower] = useState(false);
   const [following, setFollowing] = useState(false);
 
@@ -34,6 +35,21 @@ const Author = () => {
     <div className={Style.banner}>
       <Banner bannerImage={images.creatorbackground5} />
       <AuthorProfileCard />
+      <AuthorTaps
+        collectibles={collectibles}
+        created={created}
+        like={like}
+        follower={follower}
+        TabCard={TabCard}
+      />
+      <Title
+        heading="Popular Creators"
+        paragraph="Click on music icon and enjoy NFT music or audio"
+      />
+      {/* {popularArray.map((el, i) => (
+        <FollowerTabCard key={i + 1} i={i} el={el} />
+      ))} */}
+      <Brand />
     </div>
   );
 };
