@@ -6,7 +6,11 @@ import { Banner, NFTCardTwo } from "../collectionPage/collectionIndex";
 import { Brand, Title } from "../components/componentsindex";
 import images from "../img";
 
-// import { AuthorProfileCard, AuthorTaps, TabCard } from "../";
+import {
+  AuthorProfileCard,
+  AuthorTaps,
+  TabCard,
+} from "../authorPage/componentIndex";
 
 const Author = () => {
   const popularArray = [
@@ -29,6 +33,7 @@ const Author = () => {
   return (
     <div className={Style.banner}>
       <Banner bannerImage={images.creatorbackground5} />
+      <AuthorProfileCard />
     </div>
   );
 };
