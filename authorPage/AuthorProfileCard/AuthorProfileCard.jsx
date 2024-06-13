@@ -53,7 +53,7 @@ const AuthorProfileCard = () => {
 
   return (
     <div className={Style.AuthorProfileCard}>
-      <div className={Style.AuthorProfileCard_}>
+      <div className={Style.AuthorProfileCard_box}>
         <div className={Style.AuthorProfileCard_box_img}>
           <Image
             src={images.nft_image_1}
@@ -126,21 +126,21 @@ const AuthorProfileCard = () => {
                   <TiSocialInstagram />
                 </span>{" "}
                 {""}
-                {""}Facebook
+                {""}Instagram
               </p>
               <p>
                 <span>
-                  <TiSocialInstagram />
+                  <TiSocialLinkedin />
                 </span>{" "}
                 {""}
-                {""}Facebook
+                {""}Linkedin
               </p>
               <p>
                 <span>
                   <TiSocialYoutube />
                 </span>{" "}
                 {""}
-                {""}Facebook
+                {""}Youtube
               </p>
             </div>
           )}
