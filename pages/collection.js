@@ -28,8 +28,8 @@ const Collection = () => {
     <div className={Style.collection}>
       <Banner bannerImage={images.creatorbackground1} />
       <CollectionProfile />
-      <NFTCardTwo NFTData={collectionArraay} />
       <Filter />
+      <NFTCardTwo NFTData={collectionArraay} />
       <Slider />
       <Brand />
     </div>
