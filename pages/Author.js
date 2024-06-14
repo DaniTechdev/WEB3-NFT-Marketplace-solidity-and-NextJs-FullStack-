@@ -10,7 +10,7 @@ import FollowerTabCard from "../components/FollowerTab/FollowerTabCard/FollowerT
 import {
   AuthorProfileCard,
   AuthorTaps,
-  TabCard,
+  AuthorNFTCardBox,
 } from "../authorPage/componentIndex";
 
 const Author = () => {
@@ -25,7 +25,7 @@ const Author = () => {
     images.user8,
   ];
 
-  const [collectibles, setCollectibles] = useState(true);
+  const [collectibles, setCollectibles] = useState(false);
   const [created, setCreated] = useState(false);
   const [like, setLike] = useState(false);
   const [follower, setFollower] = useState(false);
@@ -36,12 +36,14 @@ const Author = () => {
       <Banner bannerImage={images.creatorbackground5} />
       <AuthorProfileCard />
       <AuthorTaps
-        collectibles={collectibles}
-        created={created}
-        like={like}
-        follower={follower}
-        TabCard={TabCard}
+        setCollectibles={setCollectibles}
+        setCreated={setCreated}
+        setLike={setLike}
+        setFollower={setFollower}
+        // TabCard={TabCard}
+        setFollowing={setFollowing}
       />
+      <AuthorNFTCardBox />
       <Title
         heading="Popular Creators"
         paragraph="Click on music icon and enjoy NFT music or audio"
