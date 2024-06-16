@@ -19,3 +19,10 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media screen and (min-device-width: 768px ) and (max-device-width:1024px){
+    .AuthorNFTCardbox_box{
+        width: 90%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
