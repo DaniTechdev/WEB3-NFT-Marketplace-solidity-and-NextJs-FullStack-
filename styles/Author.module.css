@@ -7,5 +7,13 @@
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 2rem;
-    margin-top: 6.1rem;
+    margin-top: 6.rem;
+}
+
+
+@media screen and (max-width:35em){
+    .author_box{
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
 }
