@@ -22,6 +22,8 @@ const NFTCardTwo = ({ NFTData }) => {
     }
   };
 
+  console.log("NFTDATA", NFTData);
+
   return (
     <div className={Style.NFTCardTwo}>
       {NFTData.map((el, i) => (

@@ -14,15 +14,13 @@ import {
 } from "../authorPage/componentIndex";
 
 const Author = () => {
-  const popularArray = [
-    images.user1,
-    images.user2,
-    images.user3,
-    images.user4,
-    images.user5,
-    images.user6,
-    images.user7,
-    images.user8,
+  const followerArray = [
+    { background: images.creatorbackground1, user: images.user1 },
+    { background: images.creatorbackground2, user: images.user2 },
+    { background: images.creatorbackground3, user: images.user3 },
+    { background: images.creatorbackground4, user: images.user4 },
+    { background: images.creatorbackground5, user: images.user5 },
+    { background: images.creatorbackground6, user: images.user6 },
   ];
 
   const [collectibles, setCollectibles] = useState(false);
@@ -32,7 +30,7 @@ const Author = () => {
   const [following, setFollowing] = useState(false);
 
   return (
-    <div className={Style.banner}>
+    <div className={Style.author}>
       <Banner bannerImage={images.creatorbackground5} />
       <AuthorProfileCard />
       <AuthorTaps
@@ -43,14 +41,24 @@ const Author = () => {
         // TabCard={TabCard}
         setFollowing={setFollowing}
       />
-      <AuthorNFTCardBox />
+      <AuthorNFTCardBox
+        collectibles={collectibles}
+        created={created}
+        like={like}
+        follower={follower}
+        following={following}
+      />
       <Title
         heading="Popular Creators"
         paragraph="Click on music icon and enjoy NFT music or audio"
       />
-      {/* {popularArray.map((el, i) => (
-        <FollowerTabCard key={i + 1} i={i} el={el} />
-      ))} */}
+
+      <div className={Style.author_box}>
+        {followerArray.map((el, i) => (
+          <FollowerTabCard el={el} i={i} />
+        ))}
+      </div>
+
       <Brand />
     </div>
   );

@@ -9,7 +9,7 @@ const AuthorTaps = ({
   setCollectibles,
   setCreated,
   setLike,
-  TabCard,
+  // TabCard,
   setFollower,
   setFollowing,
 }) => {
@@ -34,7 +34,7 @@ const AuthorTaps = ({
 
   const openTab = (e) => {
     const btnText = e.target.innerText;
-    if (btnText == " Collectibles") {
+    if (btnText == "Collectibles") {
       setCollectibles(true);
       setCreated(false);
       setFollower(false);
@@ -55,16 +55,16 @@ const AuthorTaps = ({
       setFollowing(false);
       setLike(true);
       setActiveBtn(3);
-    } else if (btnText == "  Following") {
+    } else if (btnText == "Following") {
       setCollectibles(false);
       setCreated(false);
       setFollower(false);
       setFollowing(true);
       setLike(false);
       setActiveBtn(4);
-    } else if (btnText == "follower") {
+    } else if (btnText == "Follower") {
       setCollectibles(false);
-      setCreated(true);
+      setCreated(false);
       setFollower(true);
       setFollowing(false);
       setLike(false);
@@ -105,7 +105,7 @@ const AuthorTaps = ({
               className={`${activeBtn == 5 ? Style.active : ""}`}
               onClick={(e) => openTab(e)}
             >
-              Followers{" "}
+              Follower{" "}
             </button>
           </div>
         </div>
