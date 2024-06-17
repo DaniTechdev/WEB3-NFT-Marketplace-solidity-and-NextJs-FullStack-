@@ -22,7 +22,7 @@ const NFTCardTwo = ({ NFTData }) => {
     }
   };
 
-  console.log("NFTDATA", NFTData);
+  // console.log("NFTDATA", NFTData);
 
   return (
     <div className={Style.NFTCardTwo}>
