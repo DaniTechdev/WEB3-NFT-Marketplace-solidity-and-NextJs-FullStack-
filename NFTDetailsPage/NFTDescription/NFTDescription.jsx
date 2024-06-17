@@ -73,7 +73,28 @@ const NFTDescription = () => {
 
   const openTabs = (e) => {
     const btnText = e.target.innerText;
+
+    if (btnText == "Bid History") {
+      setHistory(true);
+      setProvidence(false);
+      setOwner(false);
+    } else if (btnText == "Providence") {
+      setHistory(false);
+      setProvidence(true);
+      setOwner(false);
+    }
   };
+
+  const openOwner = () => {
+    if (!owner) {
+      setOwner(true);
+      setHistory(false);
+      setProvidence(false);
+    } else {
+      setOwner(false);
+    }
+  };
+
   return (
     <div className={Style.NFTDescription}>
       <div className={Style.NFTDescription_box}>
@@ -127,6 +148,7 @@ const NFTDescription = () => {
             )}
           </div>
         </div>
+        {/* //PAART TWO */}
 
         <div className={Style.NFTDescription_box_profile}>
           <h1>BearX #23453</h1>
@@ -237,9 +259,9 @@ const NFTDescription = () => {
             </div>
 
             <div className={Style.NFTDescription_box_profile_biding_box_tabs}>
-              <button onClick={(e) => openTabs(e)}> Bid History</button>
-              <button onClick={(e) => openTabs(e)}> Providence</button>
-              <button onClick={(e) => openTabs(e)}> Owner</button>
+              <button onClick={(e) => openTabs(e)}>Bid History</button>
+              <button onClick={(e) => openTabs(e)}>Providence</button>
+              <button onClick={(e) => openOwner()}>Owner</button>
             </div>
 
             {history && (
@@ -254,7 +276,7 @@ const NFTDescription = () => {
             )}
             {owner && (
               <div className={Style.NFTDescription_box_profile_biding_card}>
-                <NFTTabs dataTab={ownerArray} />
+                <NFTTabs dataTab={ownerArray} icon=<MdVerified /> />
               </div>
             )}
           </div>
