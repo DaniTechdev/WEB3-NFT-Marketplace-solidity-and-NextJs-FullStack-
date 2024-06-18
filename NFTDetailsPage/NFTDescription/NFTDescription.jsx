@@ -92,6 +92,7 @@ const NFTDescription = () => {
       setProvidence(false);
     } else {
       setOwner(false);
+      setHistory(true);
     }
   };
 
@@ -136,7 +137,8 @@ const NFTDescription = () => {
                   <BiDollar /> Change price
                 </a>
                 <a href="#">
-                  <BiTranferAlt /> Transfer
+                  {/* <BiTranferAlt /> Transfer */}
+                  Transfer
                 </a>
                 <a href="#">
                   <MdReportProblem /> Report abuse
@@ -190,7 +192,7 @@ const NFTDescription = () => {
 
           <div className={Style.NFTDescription_box_profile_biding}>
             <p>
-              <MdVerified /> <span>Auction Ending in: </span>
+              <MdTimer /> <span>Auction Ending in: </span>
             </p>
 
             <div className={Style.NFTDescription_box_profile_biding_box_timer}>
