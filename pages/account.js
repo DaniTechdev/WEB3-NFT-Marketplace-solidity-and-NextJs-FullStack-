@@ -27,11 +27,13 @@ const account = () => {
             alt="account uplaod"
             width={150}
             height={150}
-            className={Style_box_img_img}
+            className={Style.account_box_img_img}
           />
           <p className={Style.account_box_img_para}>Change Image</p>
         </div>
-        <div className={Style.account_box_form}></div>
+        <div className={Style.account_box_form}>
+          <Form />
+        </div>
       </div>
     </div>
   );
