@@ -54,6 +54,7 @@ const UploadNFT = () => {
         title="JPG, PNG,WEBM,MAX 100MB"
         heading="Drag & drop file"
         subHeading="or Browse media on your device"
+        itemName={itemName}
         description={description}
         royalties={royalties}
         fileSize={fileSize}
