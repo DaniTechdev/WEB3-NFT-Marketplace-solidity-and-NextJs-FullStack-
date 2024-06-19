@@ -57,7 +57,7 @@ const contactUs = () => {
           <div className={formStyle.contactus_box_box_right}>
             <form>
               <div className={formStyle.Form_box_input}>
-                <label htmlFor="name">Username</label>
+                <label htmlFor="name">Fullname</label>
                 <input
                   type="text"
                   placeholder="shoaib bhai"
@@ -74,7 +74,7 @@ const contactUs = () => {
                 </div>
               </div>
               <div className={formStyle.Form_box_input}>
-                <label htmlFor="description">Description</label>
+                <label htmlFor="description">Message</label>
                 <textarea
                   name=""
                   id=""
