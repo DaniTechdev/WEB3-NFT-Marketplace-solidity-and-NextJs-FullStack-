@@ -38,7 +38,7 @@
 .DropZone_box_aside_box_preview p span{
     font-size: 1.2rem;
     font-weight: 700;
-    margin-left: 1rem;
+    margin-inline: 1rem;
 }
 
 .DropZone_box_aside_box_preview_one{

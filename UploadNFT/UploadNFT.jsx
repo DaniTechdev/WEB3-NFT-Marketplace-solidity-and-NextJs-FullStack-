@@ -142,7 +142,7 @@ const UploadNFT = () => {
                     <TiTick />
                   </div>
                 </div>
-                <p>Crypto Legend - Professor</p>
+                <p>Crypto Legend - {el.category}</p>
               </div>
             ))}
           </div>
@@ -158,7 +158,7 @@ const UploadNFT = () => {
               <input
                 type="text"
                 placeholder="20%"
-                onChange={() => setRoyaltiess(e.target.value)}
+                onChange={(e) => setRoyaltiess(e.target.value)}
               />
             </div>
           </div>
@@ -171,7 +171,7 @@ const UploadNFT = () => {
               <input
                 type="text"
                 placeholder="165MB"
-                onChange={() => setFileSize(e.target.value)}
+                onChange={(e) => setFileSize(e.target.value)}
               />
             </div>
           </div>
@@ -184,7 +184,7 @@ const UploadNFT = () => {
               <input
                 type="text"
                 placeholder="Properties"
-                onChange={() => setProperties(e.target.value)}
+                onChange={(e) => setProperties(e.target.value)}
               />
             </div>
           </div>

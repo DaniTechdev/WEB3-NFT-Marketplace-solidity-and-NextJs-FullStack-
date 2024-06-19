@@ -16,7 +16,7 @@ const DropZone = ({
   category,
   properties,
   image,
-  website,
+  Website,
   royalties,
 }) => {
   const [fileUrl, setFileUrl] = useState(null);
@@ -52,7 +52,7 @@ const DropZone = ({
         </div>
       </div>
 
-      {!fileUrl && (
+      {fileUrl && (
         <aside className={Style.DropZone_box_aside}>
           <div className={Style.DropZone_box_aside_box}>
             <Image
@@ -70,7 +70,7 @@ const DropZone = ({
                 </p>
                 <p>
                   <span>website:</span>
-                  {website || ""}
+                  {Website || ""}
                 </p>
               </div>
 
@@ -92,7 +92,7 @@ const DropZone = ({
                 </p>
                 <p>
                   <span>Catogory</span>
-                  {category || ""}
+                  {category || "Digital"}
                 </p>
               </div>
             </div>
