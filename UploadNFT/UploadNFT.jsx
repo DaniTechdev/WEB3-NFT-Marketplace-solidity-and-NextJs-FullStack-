@@ -61,6 +61,7 @@ const UploadNFT = () => {
         category={category}
         properties={properties}
         image={images.upload}
+        Website={Website}
       />
 
       <div className={Style.upload_box}>
