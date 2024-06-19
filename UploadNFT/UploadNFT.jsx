@@ -147,11 +147,11 @@ const UploadNFT = () => {
           </div>
         </div>
 
-        <div className={Style.Form_box_input_social}>
-          <div className={Style.Form_box_input}>
+        <div className={formStyle.Form_box_input_social}>
+          <div className={formStyle.Form_box_input}>
             <label htmlFor="Royalties">Royalties</label>
-            <div className={Style.Form_box_input_box}>
-              <div className={Style.Form_box_input_box_icon}>
+            <div className={formStyle.Form_box_input_box}>
+              <div className={formStyle.Form_box_input_box_icon}>
                 <FaPercent />
               </div>
               <input
@@ -161,10 +161,10 @@ const UploadNFT = () => {
               />
             </div>
           </div>
-          <div className={Style.Form_box_input}>
+          <div className={formStyle.Form_box_input}>
             <label htmlFor="Size">Size</label>
-            <div className={Style.Form_box_input_box}>
-              <div className={Style.Form_box_input_box_icon}>
+            <div className={formStyle.Form_box_input_box}>
+              <div className={formStyle.Form_box_input_box_icon}>
                 <MdOutlineAttachFile />
               </div>
               <input
@@ -174,10 +174,10 @@ const UploadNFT = () => {
               />
             </div>
           </div>
-          <div className={Style.Form_box_input}>
+          <div className={formStyle.Form_box_input}>
             <label htmlFor="Properties">Properties</label>
-            <div className={Style.Form_box_input_box}>
-              <div className={Style.Form_box_input_box_icon}>
+            <div className={formStyle.Form_box_input_box}>
+              <div className={formStyle.Form_box_input_box_icon}>
                 <AiTwotonePropertySafety />
               </div>
               <input
@@ -189,9 +189,14 @@ const UploadNFT = () => {
           </div>
         </div>
 
-        <div className={Style.Form_box_btn}>
+        <div className={Style.upload_box_btn}>
           <Button
             btnText="Upload"
+            handleClick={() => {}}
+            classStyle={Style.upload_box_btn_style}
+          />
+          <Button
+            btnText="Preview"
             handleClick={() => {}}
             classStyle={Style.upload_box_btn_style}
           />
