@@ -3,7 +3,7 @@ import Image from "next/image";
 
 //INTERNAL IMPORT
 
-import Style from "../styles/Collection.module.css";
+import Style from "../styles/connectWallet.module.css";
 import images from "../img";
 
 const connectWallet = () => {
@@ -39,7 +39,7 @@ const connectWallet = () => {
           {providerArray.map((el, i) => (
             <div
               className={`${Style.connectWallet_box_provider_item} ${
-                Style.activeBtn == i + 1 ? Style.active : ""
+                activeBtn == i + 1 ? Style.active : ""
               }`}
               key={i + 1}
               onClick={() => setActiveBtn(i + 1)}
