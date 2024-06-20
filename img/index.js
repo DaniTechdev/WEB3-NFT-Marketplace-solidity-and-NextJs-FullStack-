@@ -45,7 +45,16 @@ import earn from "./eran.png";
 import provider1 from "./providemetamask.png";
 import provider2 from "./providerconnectwallet.png";
 import provider3 from "./providerfomatic.png";
+import founder1 from "./founder.png";
+import founder2 from "./founder2.png";
+import founder3 from "./founder3.png";
+import founder4 from "./founder4.png";
+
 export default {
+  founder1,
+  founder2,
+  founder3,
+  founder4,
   provider1,
   provider2,
   provider3,
