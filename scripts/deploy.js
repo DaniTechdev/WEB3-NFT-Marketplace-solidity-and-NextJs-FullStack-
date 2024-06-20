@@ -1,13 +1,13 @@
 const hre = require("hardhat");
 
 async function main() {
-  const Chatapp = await hre.ethers.getContractFactory("ChatApp");
-  const deployedContract = await Chatapp.deploy(); // Use await here
+  const NFTMarketplace = await hre.ethers.getContractFactory("NFTMarketplace");
+  const nftMarketplace = await NFTMarketplace.deploy(); // Use await here
 
-  await deployedContract.deployed();
+  await nftMarketplace.deployed();
 
   // const address = await deployedContract.address; // Corrected line
-  console.log(`CrowdFunding deployed to: ${deployedContract.address}`);
+  console.log(`nftMarketPlace deployed to: ${nftMarketplace.address}`);
 }
 
 main().catch((error) => {
