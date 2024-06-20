@@ -13,7 +13,7 @@ const Subscription = ({ el, i }) => {
         <small className={Style.subscriptionBox_box_small}>
           {el.popular || ""}
         </small>
-        <p className={Style.subscriptionBox_box_small_para}>{el.price}</p>
+        <p className={Style.subscriptionBox_box_price}>{el.price}</p>
 
         <div className={Style.subscriptionBox_box_info}>
           {el.service.map((el, i) => (
