@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.9;
 
 //INTERNAL IMPORT
 
@@ -61,7 +61,7 @@ contract NFTMarketplace is ERC721URIStorage {
         return listingPrice;
     }
 
-    //LET CREATE "CREATE NET TOKEN FUNCTION"
+    //LET CREATE "CREATE NFT TOKEN FUNCTION"
 
     function createToken(
         string memory tokenURI,
@@ -182,6 +182,7 @@ contract NFTMarketplace is ERC721URIStorage {
         return items;
     }
 
+    //Single USer Purchased Item
     //PURCHASED ITEM
     function fetchMyNft() public view returns (MarketItem[] memory) {
         uint256 totalCount = _tokenIds.current();

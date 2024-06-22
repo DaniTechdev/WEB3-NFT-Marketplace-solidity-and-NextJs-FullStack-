@@ -33,7 +33,7 @@ const NFTCard = () => {
   return (
     <div className={Style.NFTCard}>
       {CardArray.map((el, i) => (
-        <div className={Style.NFTCard_box}>
+        <div className={Style.NFTCard_box} key={i + 1}>
           <div className={Style.NFTCard_box_img}>
             <Image
               src={el}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 
 //INTERNAL IMPORT
 import {
@@ -19,7 +19,17 @@ import {
 } from "../components/componentsindex";
 import Style from "../styles/index.module.css";
 
+//IMPORTING CONTRACT DATA
+import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
+
 const index = () => {
+  const { checkIfWalletIsConnected, checkContract } = useContext(
+    NFTMarketplaceContext
+  );
+  useEffect(() => {
+    checkIfWalletIsConnected();
+    checkContract();
+  }, []);
   return (
     <div className={Style.homePage}>
       <HeroSection />
