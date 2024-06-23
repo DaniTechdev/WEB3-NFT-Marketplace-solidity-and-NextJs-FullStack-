@@ -76,7 +76,9 @@ const NavBar = () => {
 
   //SMART CONTRACT SECTION
 
-  const { currentAccount } = useContext(NFTMarketplaceContext);
+  const { currentAccount, connectWallet } = useContext(NFTMarketplaceContext);
+
+  console.log("Current account", currentAccount);
   return (
     <div className={Style.navbar}>
       <div className={Style.navbar_container}>
@@ -135,8 +137,13 @@ const NavBar = () => {
 
           {/* CREATE BUTTON SECTION */}
           <div className={Style.navbar_container_right_button}>
-            {currentAccount ==""?}
-            <Button btnText="Create" handleClick={() => {}} />
+            {currentAccount == "" ? (
+              <Button btnText="Connect" handleClick={() => connectWallet()} />
+            ) : (
+              <a href="/UploadNFT">
+                <Button btnText="Create" handleClick={() => {}} />
+              </a>
+            )}
           </div>
           {/* USER PROFILE */}
           <div className={Style.navbar_container_right_profile_box}>
@@ -167,7 +174,11 @@ const NavBar = () => {
 
       {openSideMenu && (
         <div className={Style.SideBar}>
-          <SideBar setOpenSideMenu={setOpenSideMenu} />
+          <SideBar
+            setOpenSideMenu={setOpenSideMenu}
+            currentAccount={currentAccount}
+            connectWallet={connectWallet}
+          />
         </div>
       )}
     </div>

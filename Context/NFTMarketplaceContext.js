@@ -4,6 +4,7 @@ import { ethers } from "ethers";
 import Router from "next/router";
 import axios from "axios";
 import { create as ipfsHttpClient } from "ipfs-http-client";
+import Link from "next/link";
 
 //INTERNAL IMPORT
 import { NFTMarketplaceAddress, NFTMarketplaceABI } from "./constants";
@@ -39,7 +40,7 @@ const connectingWithSmartContract = async () => {
 export const NFTMarketplaceProvider = ({ children }) => {
   const titleData = "Discover, collect, and sell NFTs";
 
-  const [currentAccount, setCurrentAccount] = useState();
+  const [currentAccount, setCurrentAccount] = useState("");
 
   const checkContract = async () => {
     const contract = await connectingWithSmartContract();
@@ -80,10 +81,10 @@ export const NFTMarketplaceProvider = ({ children }) => {
   };
 
   checkIfWalletIsConnected();
-  // useEffect(() => {
-  //   checkIfWalletIsConnected();
-  //   checkContract();
-  // }, []);
+  useEffect(() => {
+    checkIfWalletIsConnected();
+    // checkContract();
+  }, []);
   // checkIfWalletIsConnected();
 
   // checkIfWalletIsConnected();
@@ -95,7 +96,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       if (!window.ethereum) return console.log("Please Install MetaMask");
 
       const accounts = await window.ethereum.request({
-        method: "eth_requestAccount",
+        method: "eth_requestAccounts",
       });
       setCurrentAccount(accounts[0]);
       console.log(currentAccount);
@@ -309,8 +310,8 @@ export const NFTMarketplaceProvider = ({ children }) => {
         fetchMyNFTsOrListedNFTs,
         buyNFT,
         currentAccount,
-        checkIfWalletIsConnected,
-        checkContract,
+        // checkIfWalletIsConnected,
+        // checkContract,
       }}
     >
       {children}

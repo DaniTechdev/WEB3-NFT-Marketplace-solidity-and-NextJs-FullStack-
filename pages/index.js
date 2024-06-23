@@ -26,10 +26,7 @@ const index = () => {
   const { checkIfWalletIsConnected, checkContract } = useContext(
     NFTMarketplaceContext
   );
-  useEffect(() => {
-    checkIfWalletIsConnected();
-    checkContract();
-  }, []);
+
   return (
     <div className={Style.homePage}>
       <HeroSection />
