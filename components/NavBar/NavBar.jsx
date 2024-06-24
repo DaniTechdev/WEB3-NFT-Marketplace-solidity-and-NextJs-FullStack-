@@ -78,7 +78,7 @@ const NavBar = () => {
 
   const { currentAccount, connectWallet } = useContext(NFTMarketplaceContext);
 
-  console.log("Current account", currentAccount);
+  // console.log("Current account", currentAccount);
   return (
     <div className={Style.navbar}>
       <div className={Style.navbar_container}>
