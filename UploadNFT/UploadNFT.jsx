@@ -214,7 +214,7 @@ const UploadNFT = ({ createNFT, uploadToIPFS }) => {
         <div className={Style.upload_box_btn}>
           <Button
             btnText="Upload"
-            handleClick={() => {}}
+            handleClick={async () => {}}
             classStyle={Style.upload_box_btn_style}
           />
           <Button
@@ -225,12 +225,12 @@ const UploadNFT = ({ createNFT, uploadToIPFS }) => {
                 price,
                 image,
                 description,
-                router,
-                Website,
-                royalties,
-                fileSize,
-                category,
-                properties
+                router
+                // Website,
+                // royalties,
+                // fileSize,
+                // category,
+                // properties,
               )
             }
             classStyle={Style.upload_box_btn_style}

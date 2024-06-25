@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
+
+//--INTERNAL IMPORT
 import { Slider, Brand } from "../components/componentsindex";
 import { SearchBar } from "../SearchPage/searchBarindex";
 import { Filter } from "../components/componentsindex";
@@ -12,7 +14,11 @@ import {
 import Style from "../styles/searchPage.module.css";
 import images from "../img";
 
+//--SMART CONTRACT IMPORT
+import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
+
 const searchPage = () => {
+  const { fetchNFTs } = useContext(NFTMarketplaceContext);
   const collectionArray = [
     images.nft_image_1,
     images.nft_image_2,

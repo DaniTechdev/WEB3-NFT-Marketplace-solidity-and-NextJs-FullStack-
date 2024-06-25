@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import Web3Modal from "web3modal";
 import { ethers } from "ethers";
+import { useRouter } from "next/router";
 import Router from "next/router";
 import axios from "axios";
 import { create as ipfsHttpClient } from "ipfs-http-client";
@@ -40,7 +41,9 @@ const connectingWithSmartContract = async () => {
 export const NFTMarketplaceProvider = ({ children }) => {
   const titleData = "Discover, collect, and sell NFTs";
 
+  //-----USESTATE
   const [currentAccount, setCurrentAccount] = useState("");
+  const router = useRouter();
 
   const checkContract = async () => {
     const contract = await connectingWithSmartContract();
@@ -101,7 +104,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       setCurrentAccount(accounts[0]);
       console.log(currentAccount);
 
-      window.location.reload();
+      // window.location.reload();
     } catch (error) {
       console.log("Error while connecting to Wallet");
     }
@@ -140,14 +143,12 @@ export const NFTMarketplaceProvider = ({ children }) => {
   };
 
   //CREATENFT FUNCTION
-  const createNFT = async (formInput, fileUrl, router) => {
+  const createNFT = async (name, price, image, description, router) => {
     try {
-      const { name, description, price } = formInput;
-
-      if (!name || !description || !price || !fileUrl)
+      if (!name || !description || !price || !image)
         return console.log("Data Is Missing");
 
-      const data = JSON.stringify({ name, description, image: fileUrl });
+      const data = JSON.stringify({ name, description, image });
 
       const response = await axios({
         method: "post",
@@ -192,6 +193,9 @@ export const NFTMarketplaceProvider = ({ children }) => {
       //when a function makes changes to the blockchain it is wise to await it
 
       await transaction.wait();
+
+      console.log("Transaction", transaction);
+      router.push("/searchPage");
     } catch (error) {
       console.log("Error while creating sale");
     }
@@ -241,6 +245,9 @@ export const NFTMarketplaceProvider = ({ children }) => {
     }
   };
 
+  useEffect(() => {
+    fetchNFTs();
+  }, []);
   //--FETCHING MY NFT OR LISTED NFTS
 
   const fetchMyNFTsOrListedNFTs = async (type) => {
