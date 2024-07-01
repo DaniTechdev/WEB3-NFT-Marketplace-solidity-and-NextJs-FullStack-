@@ -18,6 +18,23 @@
 
 }
 
+/* :root{
+  --icons-color: #FFDF2B;
+  --icons-light-color: #ffdf2b57;
+  --icons-bg-color: #555557;
+  --shadow-dark-color: #555557;
+  --bg-shadow-dark-color: #d3dae745;
+  --shadow-light-color: #232325;
+  --main-bg-color: #232325;
+
+  --box-shadow: 1rem 1rem 2rem #FFDF2B -1px -1px 2px #FFDF2B;
+
+  --box-shadow-2: 1px  1px 2px #FFDF2B,
+  -1px -1px 2px #FFDF2B;
+  
+}
+ */
+
 
 
 html,

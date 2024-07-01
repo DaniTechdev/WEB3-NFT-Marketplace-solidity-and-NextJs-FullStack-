@@ -179,9 +179,12 @@ export const NFTMarketplaceProvider = ({ children }) => {
       //convert the input price to ether format before posting to the blockchain
       const price = ethers.utils.parseUnits(formInputPrice);
 
+      console.log("price", price);
+
       const contract = await connectingWithSmartContract();
       const listingPrice = await contract.getListingPrice();
 
+      console.log("listingPrice", listingPrice);
       const transaction = !isReselling
         ? await contract.createToken(url, price, {
             value: listingPrice.toString(),
@@ -207,7 +210,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       const provider = new ethers.providers.JsonRpcProvider();
       const contract = fetchContract(provider);
 
-      const data = await contract.fetchMarketItem();
+      const data = await contract.fetchMarketItems();
       //   console.log(data);
 
       //the data will come in terms of promise and we wll have to await the promise (all)
@@ -258,7 +261,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       const data =
         type == "fetchItemsListed"
           ? await contract.fetchItemsListed()
-          : await contract.fetchMyNft();
+          : await contract.fetchMyNFTs();
 
       const items = await Promise.all(
         data.map(
@@ -292,16 +295,21 @@ export const NFTMarketplaceProvider = ({ children }) => {
     }
   };
 
+  // useEffect(() => {
+  //   fetchMyNFTsOrListedNFTs();
+  // }, []);
   const buyNFT = async (nft) => {
     try {
       const contract = await connectingWithSmartContract();
       const price = ethers.utils.parseUnits(nft.price.toString(), "ether");
 
-      const transaction = await contract.createMArketSale(nft.tokenId, {
+      const transaction = await contract.createMarketSale(nft.tokenId, {
         value: price,
       });
 
       await transaction.wait();
+      console.log("Buy transaction details", transaction);
+      router.push("/author");
     } catch (error) {
       console.log("Error while buying NFT");
     }

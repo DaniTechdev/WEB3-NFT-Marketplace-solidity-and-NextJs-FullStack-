@@ -8,7 +8,7 @@ import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 import Style from "./NFTDetailsImg.module.css";
 import images from "../../../img";
 
-const NFTDetailsImg = () => {
+const NFTDetailsImg = ({ nft }) => {
   const [description, setDescription] = useState(true);
   const [details, setDetails] = useState(true);
   const [like, setLike] = useState(false);
@@ -59,7 +59,7 @@ const NFTDetailsImg = () => {
 
           <div className={Style.NFTDetailsImg_box_NFT_img}>
             <Image
-              src={images.nft_image_1}
+              src={nft.image}
               className={Style.NFTDetailsImg_box_NFT_img_img}
               alt="NFT image"
               width={700}
@@ -76,10 +76,7 @@ const NFTDetailsImg = () => {
 
         {description && (
           <div className={Style.NFTDetailsImg_box_description_box}>
-            Tatooed kitty Geng ipsum dolor sit amet consectetur adipisicing
-            elit. Voluptatibus explicabo quo nobis voluptas eos sequi quasi
-            ipsam ea, fugiat reprehenderit voluptatem commodi, eligendi fuga!
-            Provident architecto nulla voluptas vel quaerat?
+            <p>{nft.description}</p>
           </div>
         )}
 
@@ -97,11 +94,11 @@ const NFTDetailsImg = () => {
             <p>
               <small>Contract Address</small>
               <br></br>
-              0x3555w43r434543qr34wer34343qwsd
+              {nft.seller}
             </p>
             <p>
               <small>Toekn ID</small>
-              10034478983
+              &nbsp; {nft.tokenId}
             </p>
           </div>
         )}

@@ -28,6 +28,7 @@ const searchPage = () => {
       setNftsCopy(item);
       // console.log("nft", nfts);
     });
+    //Check if providing the dependency array will help the filter not to misbehave above
   });
 
   const onHandleSearch = (value) => {
