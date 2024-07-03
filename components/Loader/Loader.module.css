@@ -1,0 +1,9 @@
+.Loader{
+    width: 50%;
+    margin-block: 4rem;
+}
+
+.Loader_box{
+    width: 50%;
+    margin: 0 auto;
+}

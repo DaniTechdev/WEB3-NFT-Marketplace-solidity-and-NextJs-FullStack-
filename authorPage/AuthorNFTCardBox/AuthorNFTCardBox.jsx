@@ -33,13 +33,13 @@ const AuthorNFTCardBox = ({
   //   images.nft_image_3,
   // ];
 
-  const likeArray = [
-    images.nft_image_1,
-    images.nft_image_2,
-    images.nft_image_3,
-    images.nft_image_1,
-    images.nft_image_2,
-  ];
+  // const likeArray = [
+  //   images.nft_image_1,
+  //   images.nft_image_2,
+  //   images.nft_image_3,
+  //   images.nft_image_1,
+  //   images.nft_image_2,
+  // ];
 
   const followerArray = [
     { background: images.creatorbackground1, user: images.user1 },
@@ -62,7 +62,7 @@ const AuthorNFTCardBox = ({
     <div className={Style.AuthorNFTCardBox}>
       {collectibles && <NFTCardTwo NFTData={nfts} />}
       {created && <NFTCardTwo NFTData={myNFTS} />}
-      {like && <NFTCardTwo NFTData={likeArray} />}
+      {like && <NFTCardTwo NFTData={nfts} />}
       {/* {follower && <NFTCardTwo NFTData />} */}
       {/* {following && <FollowerTabCard />} */}
       {follower && (

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 
 //--INTERNAL IMPORT
-import { Slider, Brand } from "../components/componentsindex";
+import { Slider, Brand, Loader } from "../components/componentsindex";
 import { SearchBar } from "../SearchPage/searchBarindex";
 import { Filter } from "../components/componentsindex";
 import {
@@ -66,7 +66,8 @@ const searchPage = () => {
         onClearSearch={onClearSearch}
       />
       <Filter />
-      <NFTCardTwo NFTData={nfts} />
+      {nfts.length == 0 ? <Loader /> : <NFTCardTwo NFTData={nfts} />}
+
       <Slider />
       <Brand />
     </div>

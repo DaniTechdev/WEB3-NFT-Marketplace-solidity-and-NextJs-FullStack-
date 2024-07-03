@@ -49,7 +49,7 @@ import founder1 from "./founder.png";
 import founder2 from "./founder2.png";
 import founder3 from "./founder3.png";
 import founder4 from "./founder4.png";
-
+import loader from "./loader.gif";
 export default {
   founder1,
   founder2,
@@ -102,4 +102,5 @@ export default {
   vimeo,
   youtube,
   zgcmq,
+  loader,
 };
