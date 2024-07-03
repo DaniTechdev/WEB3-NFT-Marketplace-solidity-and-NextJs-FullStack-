@@ -320,6 +320,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
         titleData,
         connectWallet,
         uploadToIPFS,
+        createSale,
         createNFT,
         fetchNFTs,
         fetchMyNFTsOrListedNFTs,

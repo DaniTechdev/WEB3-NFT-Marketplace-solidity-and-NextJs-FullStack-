@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
 import {
   MdVerified,
   MdCloudUpload,
@@ -32,6 +34,8 @@ const NFTDescription = ({ nft }) => {
   const [history, setHistory] = useState(true);
   const [providence, setProvidence] = useState(false);
   const [owner, setOwner] = useState(false);
+
+  const router = useRouter();
 
   const historyArray = [
     images.user1,
@@ -260,7 +264,7 @@ const NFTDescription = ({ nft }) => {
                 <Button
                   icon=<FaWallet />
                   btnText="List on Marketplace"
-                  handleClick={() => {}}
+                  handleClick={() => router.push("/reSellToken")}
                   classStyle={Style.button}
                 />
               ) : (
