@@ -50,10 +50,14 @@ const reSellToken = () => {
           />
         </div>
 
-        <div className={Style.reSellToken_box_imgage}>
+        <div className={Style.reSellToken_box_image}>
           {image && (
             <Image src={image} alt="resell nft " width={400} height={400} />
           )}
+        </div>
+
+        <div className={Style.reSellToken_box_btn}>
+          <Button btnText="Resell NFT" handleClick={() => resell()} />
         </div>
       </div>
     </div>

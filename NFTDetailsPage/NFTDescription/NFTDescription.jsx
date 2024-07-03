@@ -264,7 +264,11 @@ const NFTDescription = ({ nft }) => {
                 <Button
                   icon=<FaWallet />
                   btnText="List on Marketplace"
-                  handleClick={() => router.push("/reSellToken")}
+                  handleClick={() =>
+                    router.push(
+                      `/reSellToken?id=${nft.tokenId}&tokenURI=${nft.tokenURI}`
+                    )
+                  }
                   classStyle={Style.button}
                 />
               ) : (
