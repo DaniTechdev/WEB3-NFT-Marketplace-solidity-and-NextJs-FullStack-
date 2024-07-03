@@ -23,7 +23,9 @@ const reSellToken = () => {
     if (!tokenURI) return;
 
     const { data } = await axios.get(tokenURI);
-    setPrice(data.price);
+    //We will take the price from the input field and pass it to the reseeling function to overwrite the price of the nft from the smart contracr
+    tokenURI;
+    // setPrice(data.price);
     setImage(data.image);
   };
 
@@ -32,8 +34,12 @@ const reSellToken = () => {
   }, [id]);
 
   const resell = async () => {
-    await createSale(tokenURI, price, true, id);
-    router.push("/author");
+    try {
+      await createSale(tokenURI, price, true, id);
+      router.push("/author");
+    } catch (error) {
+      console.log("Error while reselling", error);
+    }
   };
 
   return (
@@ -47,6 +53,7 @@ const reSellToken = () => {
             placeholder="reSell price"
             min={1}
             className={formStyle.Form_box_input_username}
+            onChange={(e) => setPrice(e.target.value)}
           />
         </div>
 

@@ -190,7 +190,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
         ? await contract.createToken(url, price, {
             value: listingPrice.toString(),
           })
-        : await contract.reSellToken(url, price, {
+        : await contract.resellToken(id, price, {
             value: listingPrice.toString(),
           });
 
