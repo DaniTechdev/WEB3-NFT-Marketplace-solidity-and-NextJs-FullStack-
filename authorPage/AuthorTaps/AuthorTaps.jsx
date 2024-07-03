@@ -34,14 +34,14 @@ const AuthorTaps = ({
 
   const openTab = (e) => {
     const btnText = e.target.innerText;
-    if (btnText == "Collectibles") {
+    if (btnText == "Listed NFTs") {
       setCollectibles(true);
       setCreated(false);
       setFollower(false);
       setFollowing(false);
       setLike(false);
       setActiveBtn(1);
-    } else if (btnText == "Created") {
+    } else if (btnText == "Own NFT") {
       setCollectibles(false);
       setCreated(true);
       setFollower(false);
@@ -81,13 +81,13 @@ const AuthorTaps = ({
               className={`${activeBtn == 1 ? Style.active : ""}`}
               onClick={(e) => openTab(e)}
             >
-              Collectibles{" "}
+              Listed NFTs{" "}
             </button>
             <button
               className={`${activeBtn == 2 ? Style.active : ""}`}
               onClick={(e) => openTab(e)}
             >
-              Created{" "}
+              Own NFT{" "}
             </button>
             <button
               className={`${activeBtn == 3 ? Style.active : ""}`}

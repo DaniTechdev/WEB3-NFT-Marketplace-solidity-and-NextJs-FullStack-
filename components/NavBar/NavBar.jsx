@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 //IMPORT ICONS
 import { MdNotifications } from "react-icons/md";
@@ -23,6 +24,8 @@ const NavBar = () => {
   const [notification, setNotification] = useState(false);
   const [profile, setProfile] = useState(false);
   const [openSideMenu, setOpenSideMenu] = useState(false);
+
+  const router = useRouter();
 
   const openMenu = (e) => {
     const btnText = e.target.innerText;
@@ -83,7 +86,7 @@ const NavBar = () => {
     <div className={Style.navbar}>
       <div className={Style.navbar_container}>
         <div className={Style.navbar_container_left}>
-          <div className={Style.logo}>
+          <div className={Style.logo} onClick={() => router.push("/")}>
             <Image
               src={images.logo}
               alt="NFT MARKET PLACE"
@@ -140,9 +143,10 @@ const NavBar = () => {
             {currentAccount == "" ? (
               <Button btnText="Connect" handleClick={() => connectWallet()} />
             ) : (
-              <a href="/UploadNFT">
-                <Button btnText="Create" handleClick={() => {}} />
-              </a>
+              <Button
+                btnText="Create"
+                handleClick={() => router.push("/UploadNFT")}
+              />
             )}
           </div>
           {/* USER PROFILE */}
@@ -156,7 +160,7 @@ const NavBar = () => {
                 onClick={() => openProfile()}
                 className={Style.navbar_container_right_profile}
               />
-              {profile && <Profile />}
+              {profile && <Profile currentAccount={currentAccount} />}
             </div>
           </div>
 

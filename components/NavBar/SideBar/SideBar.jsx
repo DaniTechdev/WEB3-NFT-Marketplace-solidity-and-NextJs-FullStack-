@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRouter } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { GrClose } from "react-icons/gr";
@@ -99,6 +99,8 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
     setOpenSideMenu(false);
   };
 
+  const router = useRouter();
+
   return (
     <div className={Style.sideBar}>
       <GrClose
@@ -167,9 +169,10 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
         {currentAccount == "" ? (
           <Button btnText="connect" handleClick={() => connectWallet()} />
         ) : (
-          <a href="/UploadNFT">
-            <Button btnText="Create" handleClick={() => {}} />
-          </a>
+          <Button
+            btnText="Create"
+            handleClick={() => Router.push("/UploadNFT")}
+          />
         )}
       </div>
     </div>
