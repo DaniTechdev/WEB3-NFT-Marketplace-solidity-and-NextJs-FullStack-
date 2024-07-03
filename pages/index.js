@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 //INTERNAL IMPORT
 import {
@@ -22,10 +22,23 @@ import Style from "../styles/index.module.css";
 //IMPORTING CONTRACT DATA
 import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
 
-const index = () => {
+const Home = () => {
   const { checkIfWalletIsConnected, checkContract } = useContext(
     NFTMarketplaceContext
   );
+
+  const { fetchNFTs } = useContext(NFTMarketplaceContext);
+  const [nfts, setNfts] = useState([]);
+  const [nftsCopy, setNftsCopy] = useState([]);
+
+  useEffect(() => {
+    fetchNFTs().then((item) => {
+      setNfts(item.reverse());
+      setNftsCopy(item);
+      // console.log("nft", nfts);
+    }, []);
+    //Check if providing the dependency array will help the filter not to misbehave above
+  });
 
   return (
     <div className={Style.homePage}>
@@ -55,7 +68,7 @@ const index = () => {
         paragraph="Discover the most outstanding NFTs in all topics of life"
       />
       <Filter />
-      <NFTCard />
+      <NFTCard NFTData={nfts} />
       <Title
         heading="Browse by Category"
         paragraph="Explore the NFTs in the most featured catogories"
@@ -68,4 +81,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Home;
