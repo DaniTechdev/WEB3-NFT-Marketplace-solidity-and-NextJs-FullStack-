@@ -18,16 +18,20 @@ import images from "../img";
 import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
 
 const searchPage = () => {
-  const { fetchNFTs } = useContext(NFTMarketplaceContext);
+  const { fetchNFTs, setError } = useContext(NFTMarketplaceContext);
   const [nfts, setNfts] = useState([]);
   const [nftsCopy, setNftsCopy] = useState([]);
 
   useEffect(() => {
-    fetchNFTs().then((item) => {
-      setNfts(item.reverse());
-      setNftsCopy(item);
-      // console.log("nft", nfts);
-    });
+    try {
+      fetchNFTs().then((item) => {
+        setNfts(item.reverse());
+        setNftsCopy(item);
+        // console.log("nft", nfts);
+      });
+    } catch (error) {
+      setError("Please reload the browser");
+    }
     //Check if providing the dependency array will help the filter not to misbehave above
   });
 
