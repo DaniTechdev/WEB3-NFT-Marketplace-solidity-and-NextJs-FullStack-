@@ -18,12 +18,36 @@ import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
 
 const Author = () => {
   const followerArray = [
-    { background: images.creatorbackground1, user: images.user1 },
-    { background: images.creatorbackground2, user: images.user2 },
-    { background: images.creatorbackground3, user: images.user3 },
-    { background: images.creatorbackground4, user: images.user4 },
-    { background: images.creatorbackground5, user: images.user5 },
-    { background: images.creatorbackground6, user: images.user6 },
+    {
+      background: images.creatorbackground1,
+      user: images.user1,
+      seller: "0x4sdcbj34ri34efbuincdks",
+    },
+    {
+      background: images.creatorbackground2,
+      user: images.user2user1,
+      seller: "0x4sdcbj34ri34efbuincdks",
+    },
+    {
+      background: images.creatorbackground3,
+      user: images.user3user1,
+      seller: "0x4sdcbj34ri34efbuincdks",
+    },
+    {
+      background: images.creatorbackground4,
+      user: images.user4user1,
+      seller: "0x4sdcbj34ri34efbuincdks",
+    },
+    {
+      background: images.creatorbackground5,
+      user: images.user5user1,
+      seller: "0x4sdcbj34ri34efbuincdks",
+    },
+    {
+      background: images.creatorbackground6,
+      user: images.user6user1,
+      seller: "0x4sdcbj34ri34efbuincdks",
+    },
   ];
 
   const [collectibles, setCollectibles] = useState(false);
